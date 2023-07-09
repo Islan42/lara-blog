@@ -15,11 +15,23 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $user = User::factory()->create([
-          'name' => 'John Doe',
+        
+        $category1 = Category::factory()->create();
+        $category2 = Category::factory()->create();
+        $category3 = Category::factory()->create();
+        $category4 = Category::factory()->create();
+        
+        Post::factory(6)->create([
+          'category_id' => $category1->id,
         ]);
-        Post::factory(5)->create([
-          'user_id' => $user->id,
+        Post::factory(6)->create([
+          'category_id' => $category2->id,
+        ]);
+        Post::factory(6)->create([
+          'category_id' => $category3->id,
+        ]);
+        Post::factory(6)->create([
+          'category_id' => $category4->id,
         ]);
     }
 }

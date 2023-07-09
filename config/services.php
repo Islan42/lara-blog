@@ -30,5 +30,13 @@ return [
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
+    
+    'mailchimp' => [
+      'key' => env('MAILCHIMP_KEY'),
+      'prefix' => env('MAILCHIMP_PREFIX'),
+      'lists' => [
+        'subscribers' => '326ed09152',
+      ],
+    ], 
 
 ];
